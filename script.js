@@ -1,3 +1,11 @@
+//El Objetivo que me propuse para esta segunda entrega fue realizar un juego, elegi esta opción porque
+// el juego de la memoria es simple pero a la vez permite utilizar casi todas las funciones que hemos visto
+// Variables, funciones simples, funciones flechas, arrays, diseñar un contador y relacionar el html mediante DOM
+//Utilizo la libreria de SweetAlert2 para mostras mensajes (pop-up) cuando se acaba el tiempo y cuando se
+// cumple con todos los aciertos.
+
+// Para llevar un orden en mi código primero declaro todas las variables que utilizaré en el desarrollo
+
 let tarjetasDestapadas = 0;
 let tarjeta1 = null;
 let tarjeta2 = null;
@@ -10,18 +18,23 @@ let timer = 60;
 let timerInicial = timer;
 let tiempoRegresivoId = null;
 
-// Apuntando a los elementos HTML para mostrar las estadísticas
+// Apunto a los elementos HTML para mostrar las estadísticas (DOM)
 let mostrarMovimientos = document.getElementById("movimientos");
 let mostrarAciertos = document.getElementById("aciertos");
 let mostrarTiempo = document.getElementById("t-restante");
 let botonInicio = document.getElementById("inicio");
 
-// Generación de los números aleatorios y asignación a las tarjetas
+// Generación de los números aleatorios y asignación a las tarjetas mediante la variable numeros y una funcion flecha
+// para que genere un random
 let numeros = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
 numeros = numeros.sort(() => {
   return Math.random() - 0.5;
 });
-console.log(numeros);
+console.log(numeros); // por consola verifico el buen funcionamiento
+
+/* *********************************************************************************** */
+//FUNCIONES:
+/* ***********************************************************************************/
 
 // Función para contar el tiempo transcurrido del jugador
 function contarTiempo() {
@@ -106,14 +119,14 @@ function destapar(id) {
         tarjeta2.innerHTML = "";
         tarjeta1.disabled = false;
         tarjeta2.disabled = false;
-      }, 500);
+      }, 400);
     }
 
     tarjetasDestapadas = 0;
   }
 }
 
-// Función para reiniciar el juego
+// Función para reiniciar el juego (mientras el participante logra todos los aciertos puede seguir jugando)
 function reiniciarJuego() {
   clearInterval(tiempoRegresivoId);
   temporizador = false;
@@ -130,11 +143,3 @@ function reiniciarJuego() {
   mostrarTiempo.innerHTML = `Tiempo: ${timerInicial} segundos`;
   desbloquearTarjetas();
 }
-
-// Función para iniciar el juego
-function iniciarJuego() {
-  reiniciarJuego();
-}
-
-
-

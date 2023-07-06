@@ -1,15 +1,18 @@
+
 body {
-    background: #1a2980; /* fallback for old browsers */
+    background: #04115f; /* fallback for old browsers */
     background: -webkit-linear-gradient(
       to right,
       #030a37,
-      #6fb10d
-    ); /* Chrome 10-25, Safari 5.1-6 */
+      #e314bd
+    ); 
+    /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(
       to right,
       #1a2980,
-      #61e284
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      #d60b8f
+    ); 
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family: sans-serif;
     color: white;
   }
@@ -29,7 +32,13 @@ body {
     text-align: center;
     color: chartreuse;
     text-transform: uppercase;
-    -webkit-text-stroke: 1px black;
+    background: -webkit-radial-gradient(circle farthest-side at top right, #211491 32%, #FF7424 67%, #CF9D29 85%);
+    background: -moz-radial-gradient(circle farthest-side at top right, #211491 32%, #FF7424 67%, #CF9D29 85%);
+    background: radial-gradient(circle farthest-side at top right, #211491 32%, #FF7424 67%, #CF9D29 85%);
+    -webkit-background-clip: text;
+    background-clip: var();
+    -webkit-text-fill-color: transparent;
+
   }
   h2 {
     color: #3337eb;
@@ -67,7 +76,7 @@ body {
     font-size: 15px;
     margin-bottom: 20px;
     color: white;
-    background-color: #4286f4;
+    background-color: #18099d;
     border: 1px solid white;
     border-radius: 8px;
 
